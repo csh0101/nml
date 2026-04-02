@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "generatedTextFile": "../generated/forbidden_hit.txt",
+  "errorCodes": ["E3004", "E3007"],
+  "warningCodes": []
+}

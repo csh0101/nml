@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+
+# Node artifacts
+**/node_modules/
+**/dist/
+**/.tsbuildinfo
+
+# Runtime outputs
+**/reports/*.json
+project/**/*.report.json
+
+# Local tool configs
+validator/.claude/
+validator/.mcp.json
+

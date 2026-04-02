@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+
+ROOT_DIR="$(git rev-parse --show-toplevel)"
+VALIDATOR_DIR="$ROOT_DIR/validator"
+
+if [ ! -d "$VALIDATOR_DIR" ]; then
+  echo "[pre-commit] validator directory not found: $VALIDATOR_DIR" >&2
+  exit 1
+fi
+
+cd "$VALIDATOR_DIR"
+echo "[pre-commit] running NML unittest checks..."
+npm run unittest

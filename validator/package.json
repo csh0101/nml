@@ -1,0 +1,28 @@
+{
+  "name": "nml-validator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "npm run build && node dist/src/cli/check.js",
+    "inspect": "npm run build && node dist/src/cli/inspect.js",
+    "regress": "npm run build && node dist/src/cli/regress.js",
+    "mcp": "npm run build && node dist/src/mcp/server.js",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "test:watch": "npm run build && node --test --watch dist/tests/*.test.js",
+    "unittest": "npm run test && npm run regress -- --parser tree-sitter && npm run regress -- --parser xml"
+  },
+  "dependencies": {
+    "@tree-sitter-grammars/tree-sitter-xml": "^0.7.0",
+    "fast-xml-parser": "^4.5.0",
+    "tree-sitter": "^0.21.1",
+    "@modelcontextprotocol/sdk": "^1.17.4",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}

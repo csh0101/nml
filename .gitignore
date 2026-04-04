@@ -9,8 +9,8 @@
 # Runtime outputs
 **/reports/*.json
 project/**/*.report.json
+parser-rs/target/
 
 # Local tool configs
 validator/.claude/
 validator/.mcp.json
-

@@ -17,7 +17,7 @@ const reportOutArg = parseFlagValue(args, "report-out");
 const generatedTextArg = parseFlagValue(args, "generated-text");
 
 if (!fileArg) {
-  console.error("Usage: npm run check -- <file.nml> [--parser xml|tree-sitter] [--generated-text text.txt] [--report-out report.json]");
+  console.error("Usage: npm run check -- <file.nml> [--parser xml|tree-sitter|rust-nom] [--generated-text text.txt] [--report-out report.json]");
   process.exit(1);
 }
 

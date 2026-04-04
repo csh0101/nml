@@ -9,7 +9,7 @@ export interface ValidationReport {
   nml_version: string;
   scene_id: string;
   attempt_no: number;
-  parser: "xml" | "tree-sitter";
+  parser: "xml" | "tree-sitter" | "rust-nom";
   passed: boolean;
   errors: ValidationIssue[];
   warnings: ValidationIssue[];
@@ -29,7 +29,7 @@ function sha256(content: string): string {
 
 export function buildValidationReport(
   sourceNml: string,
-  parser: "xml" | "tree-sitter",
+  parser: "xml" | "tree-sitter" | "rust-nom",
   result: ValidationResult,
   generatedText?: string,
 ): ValidationReport {

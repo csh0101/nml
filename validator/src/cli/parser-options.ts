@@ -1,8 +1,9 @@
 import type { ParserAdapter } from "../adapters/parser-adapter.js";
 import { XmlAdapter } from "../adapters/xml-adapter.js";
 import { TreeSitterAdapter } from "../adapters/tree-sitter-adapter.js";
+import { RustNomAdapter } from "../adapters/rust-nom-adapter.js";
 
-export type ParserKind = "xml" | "tree-sitter";
+export type ParserKind = "xml" | "tree-sitter" | "rust-nom";
 
 export function parseCliArgs(argv: string[]): { parser: ParserKind; fileArg?: string } {
   let parser: ParserKind = "xml";
@@ -36,5 +37,6 @@ export function parseCliArgs(argv: string[]): { parser: ParserKind; fileArg?: st
 export function createParserAdapter(kind: ParserKind): ParserAdapter {
   if (kind === "xml") return new XmlAdapter();
   if (kind === "tree-sitter") return new TreeSitterAdapter();
+  if (kind === "rust-nom") return new RustNomAdapter();
   throw new Error(`Unsupported parser kind: ${kind}`);
 }

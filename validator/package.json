@@ -6,12 +6,16 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "check": "npm run build && node dist/src/cli/check.js",
+    "compile": "npm run build && node dist/src/cli/compile.js",
+    "render": "npm run build && node dist/src/cli/render.js",
     "inspect": "npm run build && node dist/src/cli/inspect.js",
     "regress": "npm run build && node dist/src/cli/regress.js",
+    "regress:rust": "npm run regress -- --parser rust-nom",
     "mcp": "npm run build && node dist/src/mcp/server.js",
     "test": "npm run build && node --test dist/tests/*.test.js",
     "test:watch": "npm run build && node --test --watch dist/tests/*.test.js",
-    "unittest": "npm run test && npm run regress -- --parser tree-sitter && npm run regress -- --parser xml"
+    "unittest": "npm run test && npm run regress -- --parser tree-sitter && npm run regress -- --parser xml",
+    "unittest:all": "npm run unittest && npm run regress:rust"
   },
   "dependencies": {
     "@tree-sitter-grammars/tree-sitter-xml": "^0.7.0",

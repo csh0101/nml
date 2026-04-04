@@ -94,6 +94,24 @@ Recommended classes:
 - `E5xxx`: version/migration
 - `E6xxx`: extension
 
+## 9.1 Implemented M1 Narrative Subset (Current Validator)
+The current validator implementation supports these segment-level tags and controls:
+- `段落计划`:
+  - `校验=和等于场景字数目标`
+  - `校验=对齐场景配比` with `偏差上限`
+  - `流转校验=开启`
+  - `状态校验=开启` with optional `体力演化=同级或下降`, `情绪演化=受限迁移`
+  - `关系校验=开启` with optional `关系演化=波动不超过1`
+  - `关系类型演化=严格一致|受限迁移`
+- `段`: `字数目标/功能/焦点/节奏/视角/对话占比/动作占比`
+- `信息点`: `类型/权重` and non-empty text
+- `状态`: `角色/阶段/体力/情绪`
+- `关系状态`: `角色/目标/阶段/强度/类型`
+
+Reference:
+- Validator rule details: `validator/README.md`
+- Rule coverage matrix: `validator/docs/rule-coverage.md`
+
 ## 10. Import and Modularity
 If import is enabled (`导入`):
 - Import graph MUST be acyclic.
@@ -135,4 +153,3 @@ Unknown extension tags MAY be ignored with warning, unless explicitly declared r
 ## 14. Appendix Index
 - Tag contract details: `docs/NML定义/标签/`
 - Explanatory volumes: `docs/NML定义/讲解/`
-

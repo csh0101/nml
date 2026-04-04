@@ -16,7 +16,7 @@ const { parser, fileArg } = parseCliArgs(args);
 const astOut = parseFlagValue(args, "ast-json-out");
 
 if (!fileArg) {
-  console.error("Usage: npm run inspect -- <file.nml> [--parser xml|tree-sitter] [--ast-json-out ast.json]");
+  console.error("Usage: npm run inspect -- <file.nml> [--parser xml|tree-sitter|rust-nom] [--ast-json-out ast.json]");
   process.exit(1);
 }
 
@@ -33,4 +33,3 @@ try {
   console.error(`Inspect failed: ${(err as Error).message}`);
   process.exit(3);
 }
-

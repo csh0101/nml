@@ -17,7 +17,7 @@ server.registerTool(
     description: "Validate one NML file with structure/reference/rules and optional generated-text semantic checks.",
     inputSchema: {
       file: z.string().describe("Path to .nml file"),
-      parser: z.enum(["xml", "tree-sitter"]).optional().describe("Parser kind. Default: tree-sitter"),
+      parser: z.enum(["xml", "tree-sitter", "rust-nom"]).optional().describe("Parser kind. Default: tree-sitter"),
       generatedTextFile: z.string().optional().describe("Optional generated text file for semantic checks"),
       reportOutFile: z.string().optional().describe("Optional output report path"),
     },
@@ -57,7 +57,7 @@ server.registerTool(
     title: "NML Regress",
     description: "Run regression suite under src/samples/regression or a custom baseDir.",
     inputSchema: {
-      parser: z.enum(["xml", "tree-sitter"]).optional().describe("Parser kind. Default: tree-sitter"),
+      parser: z.enum(["xml", "tree-sitter", "rust-nom"]).optional().describe("Parser kind. Default: tree-sitter"),
       baseDir: z.string().optional().describe("Optional regression samples base dir"),
     },
   },
